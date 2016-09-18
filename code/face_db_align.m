@@ -1,5 +1,8 @@
 function res = face_db_align(face_dir, ffp_dir, ec_mc_y, ec_y, img_size, save_dir)
 
+%delim = delim;
+delim = '/';
+
 % center of eyes (ec), center of l&r mouth(mc), rotate and resize
 % ec_mc_y: y_mc-y_ec, diff of height of ec & mc, to scale the image.
 % ec_y: top of ec, to crop the face.
@@ -16,16 +19,16 @@ for i=1: length(subdir)
         continue;
     end
     fprintf('[%.2f%%] %s\n', 100*i/length(subdir), subdir(i).name);
-    pathstr = [save_dir '\' subdir(i).name];
+    pathstr = [save_dir delim subdir(i).name];
     if exist(pathstr, 'dir')  == 0
         fprintf('create %s\n', pathstr);
         mkdir(pathstr);
     end
     
-    img_fns = dir([face_dir '\' subdir(i).name '\*.jpg']);
+    img_fns = dir([face_dir delim subdir(i).name delim '*.jpg']);
     for k=1: length(img_fns)
-        img = imread([face_dir '\' subdir(i).name '\' img_fns(k).name]);
-        ffp_fn = [ffp_dir '\' subdir(i).name '\' img_fns(k).name(1:end-3) '5pt'];
+        img = imread([face_dir delim subdir(i).name delim img_fns(k).name]);
+        ffp_fn = [ffp_dir delim subdir(i).name delim img_fns(k).name(1:end-3) '5pt'];
         if exist(ffp_fn, 'file') == 0
             img2 = img;
             fprintf('%s NOT exists.\n', ffp_fn);
@@ -67,7 +70,7 @@ for i=1: length(subdir)
         if size(img_final,3)>1
             img_final = rgb2gray(img_final);
         end
-        save_fn = [save_dir '\' subdir(i).name '\' img_fns(k).name(1:end-3) 'bmp'];
+        save_fn = [save_dir delim subdir(i).name delim img_fns(k).name(1:end-3) 'bmp'];
         imwrite(img_final, save_fn);
     end 
 end
