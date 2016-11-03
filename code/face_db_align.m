@@ -46,23 +46,23 @@ for i=1: length(subdir)
         end
         fprintf(log_fid, '%s %f\n', ffp_fn, resize_scale);
         
-        figure(1);
-        subplot(1,3,1);
-        imshow(img);
-        hold on;
-        plot(f5pt(1,1),f5pt(1,2), 'bo');
-        plot(f5pt(2,1),f5pt(2,2), 'bo');
-        hold off;
-        subplot(1,3,2);
-        imshow(img2);
-%         rectangle('Position', [round(eyec(1)) round(eyec(2)) 10 10]);
-        hold on;
-        plot(eyec(1), eyec(2), 'ro');
-        plot(10,100, 'bx');
-        hold off;
-        subplot(1,3,3);
-        imshow(img_cropped);
-        pause;
+%         figure(1);
+%         subplot(1,3,1);
+%         imshow(img);
+%         hold on;
+%         plot(f5pt(1,1),f5pt(1,2), 'bo');
+%         plot(f5pt(2,1),f5pt(2,2), 'bo');
+%         hold off;
+%         subplot(1,3,2);
+%         imshow(img2);
+% %         rectangle('Position', [round(eyec(1)) round(eyec(2)) 10 10]);
+%         hold on;
+%         plot(eyec(1), eyec(2), 'ro');
+%         plot(10,100, 'bx');
+%         hold off;
+%         subplot(1,3,3);
+%         imshow(img_cropped);
+%         pause;
         
         
         

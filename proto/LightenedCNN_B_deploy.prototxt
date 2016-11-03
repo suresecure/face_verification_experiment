@@ -1,6 +1,6 @@
 name: "DeepFace_set003_net"
 input: "data"
-input_dim: 20
+input_dim: 1
 input_dim: 1
 input_dim: 128
 input_dim: 128
@@ -490,37 +490,37 @@ layers{
   bottom: "eltwise_fc1"
   top: "eltwise_fc1"
 }
-layers{
-  name: "fc2"
-  type: INNER_PRODUCT
-
-  inner_product_param{
-	num_output: 10575
-	weight_filler {
-	  type: "xavier"
-	}
-	bias_filler {
-	  type: "constant"
-	  value: 0.1
-	}	
-  }
-  bottom: "eltwise_fc1"
-  top: "fc2"
-}
-
-layers {
-  name: "softmax"
-  type: SOFTMAX
-  bottom: "fc2"
-  top: "prob"
-  include: { phase: TEST }
-}
-
-layers {
-  name: "accuracy"
-  type: ACCURACY
-  bottom: "prob"
-  bottom: "label"
-  top: "accuracy"
-  include: { phase: TEST }
-}
+#layers{
+#  name: "fc2"
+#  type: INNER_PRODUCT
+#
+#  inner_product_param{
+#	num_output: 10575
+#	weight_filler {
+#	  type: "xavier"
+#	}
+#	bias_filler {
+#	  type: "constant"
+#	  value: 0.1
+#	}	
+#  }
+#  bottom: "eltwise_fc1"
+#  top: "fc2"
+#}
+#
+#layers {
+#  name: "softmax"
+#  type: SOFTMAX
+#  bottom: "fc2"
+#  top: "prob"
+#  include: { phase: TEST }
+#}
+#
+#layers {
+#  name: "accuracy"
+#  type: ACCURACY
+#  bottom: "prob"
+#  bottom: "label"
+#  top: "accuracy"
+#  include: { phase: TEST }
+#}

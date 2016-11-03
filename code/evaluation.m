@@ -1,7 +1,31 @@
 % load data
 % load('../results/LightenedCNN_A_lfw.mat');      % model A
-load('../results/LightenedCNN_B_lfw.mat');      % model B
-load('lfw_pairs.mat');
+% load('../results/LightenedCNN_B_lfw.mat');      % model B
+% load('lfw_pairs.mat');
+
+% load('../python/lfw_lightened_cnn_caffe_rc.mat');    
+% load('../python/lfw_lightened_cnn_caffe_rc3.mat')
+% load('../python/lfw_lightened_cnn_caffe_deploy.mat')
+% load('../python/lfw_lightened_cnn_B_caffe_deploy_origin_align.mat');
+% load('../python/lfw_lightened_cnn_mxnet_0166_convert_origin_align_2.mat');   
+% load('../python/lfw_lightened_cnn_retrain_0200_convert_origin_align_2.mat');   
+% load('../python/lfw_lightened_cnn_caffe_retrain__20161021_665280.mat');
+% load('../python/lfw_lightened_cnn_caffe_retrain__20161021_1028160.mat');
+% load('../python/lfw_lightened_cnn_caffe_retrain_20161021_2_1148550.mat');
+% load('../python/lfw_lightened_cnn_origin_b.mat');
+% load('../python/lfw_lightened_cnn_caffe_retrain_20161027_1500000.mat');
+% load('../python/lfw_lightened_cnn_caffe_retrain_20161021_3_1200000.mat');
+% load('../python/lfw_lightened_cnn_caffe_retrain_20161021_2_1500000.mat');
+load('../python/lfw_lightened_cnn_caffe_retrain_20161021_2_1027650.mat');
+% % load('../python/lfw_lightened_cnn_caffe_retrain_20161021_2_1209000.mat');
+load('lfw_pairs_lightened_cnn_origin_align.mat');
+
+% load('../python/lfw_lightened_cnn_B_mxnet_align.mat');   
+% load('../python/lfw_lightened_cnn_mxnet_0166_convert.mat');   
+% load('../python/lfw_lightened_cnn_retrain_0200_convert.mat');   
+% load('../python/lfw_lightened_cnn_mxnet_0166.mat');   
+% load('../python/lfw_lightened_cnn_retrain_0200.mat');   
+% load('lfw_pairs_mxnet_convert.mat');
 
 % pos
 for i = 1: length(pos_pair)
